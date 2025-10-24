@@ -50,10 +50,11 @@ After setup, you’ll be able to ask Claude for routes, coordinates, or nearby p
 
 Goal: run the official [`mcp/google-maps-comprehensive`](https://hub.docker.com/r/mcp/google-maps-comprehensive) image locally, connect it to Claude Desktop via a simple JSON config, and call Maps tools interactively.
 
-**Tools included:**  
+Tools included: 
+<img width="796" height="278" alt="image" src="https://github.com/user-attachments/assets/2a356773-ac7a-4d92-b7a8-291a4b3b040f" />
 
 
-What you’ll nee
+What you’ll need:
 - Claude Desktop
 - Docker Desktop*
 - A valid Google Maps API key
