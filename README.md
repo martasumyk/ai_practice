@@ -19,17 +19,25 @@ The outputs are stored in the `anthropic_trajectories/` folder, creating a trace
 
 Install requirements: 
 
-``` pip install -r requirements.txt ```
+``` 
+pip install -r requirements.txt 
+```
 
 Set your Anthropic API key:
 
-```export ANTHROPIC_API_KEY="your_api_key_here"```
+```
+export ANTHROPIC_API_KEY="your_api_key_here"
+```
 
 Run the task:
 
-```python anthropic_computer_use.py task_description```
+```
+python anthropic_computer_use.py task_description
+```
 
 For example:
 
-```python anthropic_computer_use.py “Open Safari and search for apple.com website"```
+```
+python anthropic_computer_use.py “Open Safari and search for apple.com website"
+```
 
