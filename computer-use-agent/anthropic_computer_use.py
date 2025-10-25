@@ -7,7 +7,7 @@ import json
 import argparse
 from PIL import ImageGrab
 
-TRAJECTORY_DIR = "/Users/martasumyk/Desktop/Thesis/baseline/anthropic_trajectories" # where to save screenshots + reasonings
+TRAJECTORY_DIR = "./computer-use-agent/anthropic_trajectories" # where to save screenshots + reasonings
 os.makedirs(TRAJECTORY_DIR, exist_ok=True)
 
 client = anthropic.Anthropic()
@@ -18,9 +18,6 @@ MAX_REPEATS = 3 # maximum number of repeated cycles
 MAX_STEPS = 20 # if task is not done in MAX_STEPS times - just finish it
 
 
-# -------------------------------
-# Helpers
-# -------------------------------
 def next_task_dir(base_dir: str) -> str:
     """Find next task_{NNN} directory name."""
     existing = [d for d in os.listdir(base_dir) if d.startswith("task_")]
@@ -46,12 +43,8 @@ def scale_coords(coord):
 
 def take_screenshot(step_dir, step_id):
     screenshot_path = os.path.join(step_dir, f"step_{step_id:02d}.png")
-    try:
-        img = ImageGrab.grab()
-        img.save(screenshot_path, "PNG")
-        print(f"Saved screenshot: {screenshot_path}")
-    except Exception as e:
-        print(f"Failed to save screenshot: {e}")
+    img = ImageGrab.grab()
+    img.save(screenshot_path, "PNG")
     return screenshot_path
 
 
@@ -118,16 +111,12 @@ def save_step_data(step_dir, step_id, response, tool_output):
         json.dump(step_data, f, indent=2)
 
 
-# -------------------------------
-# Main
-# -------------------------------
 def run_single_task(task_text: str):
     task_dir, task_num = next_task_dir(TRAJECTORY_DIR)
-    print(f"\n=== Running Task {task_num:03d}: {task_text} ===")
+    print(f"\nRunning task: {task_text}")
 
-    # Save task text
     with open(os.path.join(task_dir, f"task_{task_num:03d}.txt"), "w") as f:
-        f.write(task_text)
+        f.write(task_text) # save the task description
 
     messages = [{"role": "user", "content": task_text}]
     last_action = None
@@ -149,7 +138,7 @@ def run_single_task(task_text: str):
                 betas=["computer-use-2025-01-24"]
             )
         except Exception as e:
-            print(f"Error at Step {step}: {e}")
+            print(f"Error at step {step}: {e}")
             return
 
         messages.append({"role": "assistant", "content": response.content})
@@ -170,7 +159,7 @@ def run_single_task(task_text: str):
                 last_action = tool_input
 
                 if repeat_count > MAX_REPEATS:
-                    print("Skipping repeated action")
+                    print("skipping repeated action")
                     continue
 
                 if tool_name == "computer":
@@ -199,8 +188,7 @@ def run_single_task(task_text: str):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Run one Anthropic macOS GUI task.")
-    # single positional argument: the task description
+    parser = argparse.ArgumentParser(description="Run one Anthropic task.")
     parser.add_argument("task", type=str, help="Task description to execute (quoted if it contains spaces).")
     args = parser.parse_args()
     run_single_task(args.task)
