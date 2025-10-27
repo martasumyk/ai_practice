@@ -5,7 +5,7 @@ It enables Claude to read and write local files (for example: text, CSV, or JSON
 
 ## 1. Requirements
 
-- macOS with Claude Desktop installed  
+- macOS with Claude Desktop installed  (https://www.claude.com/download)
 - Node.js and npm (install via Homebrew if missing)
   ```bash
   brew install node
