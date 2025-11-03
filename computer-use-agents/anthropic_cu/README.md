@@ -1,4 +1,4 @@
-# Computer Use Agent (Anthropic)
+# Computer Use Agent (Anthropic, proprietary)
 
 ## Intro
 
@@ -30,11 +30,11 @@ export ANTHROPIC_API_KEY="your_api_key_here"
 Run the task:
 
 ```
-python computer-use-agent/anthropic_computer_use.py task_description
+python computer-use-agents/anthropic_cu/anthropic_computer_use.py task_description
 ```
 
 For example:
 
 ```
-python computer-use-agent/anthropic_computer_use.py “Open Safari and search for apple.com website"
+python computer-use-agents/anthropic_cu/anthropic_computer_use.py “Open Safari and search for apple.com website"
 ```
