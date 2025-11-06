@@ -35,9 +35,6 @@ Also, you can try to change task and prompt in the `config.py` file.
 
 ## Recordings 
 
-Task: Go to apple.com website in Safari.
-
-![Recording 1](gifs/recording1.gif)
 
 Task: Go to Calendar app and change the view to Year.
 
