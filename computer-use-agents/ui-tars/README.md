@@ -33,3 +33,9 @@ python computer-use-agents/ui-tars/main.py
 
 Also, you can try to change task and prompt in the `config.py` file.
 
+## Recordings 
+
+![Recording 1](gifs/recording1.gif)
+![Recording 2](gifs/recording2.gif)
+![Recording 3](gifs/recording3.gif)
+
