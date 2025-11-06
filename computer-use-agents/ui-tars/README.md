@@ -40,7 +40,5 @@ Task: Go to Calendar app and change the view to Year.
 
 ![Recording 2](gifs/recording2.gif)
 
-Task: Make Safari my default browsser.
 
-![Recording 3](gifs/recording3.gif)
 
