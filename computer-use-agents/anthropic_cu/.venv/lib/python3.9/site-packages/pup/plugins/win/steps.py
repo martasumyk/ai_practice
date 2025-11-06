@@ -1,0 +1,25 @@
+"""
+PUP Plugin defining Windows packaging stages.
+"""
+
+
+class Steps:
+
+    @staticmethod
+    def usable_in(ctx):
+        return (
+            (ctx.pkg_platform == 'win32') and
+            (ctx.tgt_platform == 'win32')
+        )
+
+    def __call__(self, ctx, _dsp):
+        return (
+            'win.icon-from-png',
+            'pup.python-runtime',
+            'win.distribution-layout',
+            'pup.pip-install',
+            'pup.install-cleanup',
+            'win.sign-binaries',
+            'win.create-msi',
+            'win.sign-msi',
+        )

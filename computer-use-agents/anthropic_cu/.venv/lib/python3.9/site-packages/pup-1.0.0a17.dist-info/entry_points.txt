@@ -1,0 +1,28 @@
+[console_scripts]
+pup = pup.__main__:main
+
+[pup.plugins]
+linux.appdir_create = pup.plugins.linux.appdir_create:Step
+linux.appdir_layout = pup.plugins.linux.appdir_layout:Step
+linux.dirs = pup.plugins.linux.dirs:Directories
+linux.steps = pup.plugins.linux.steps:Steps
+mac.app_bundle_template = pup.plugins.mac.app_bundle:Step
+mac.create_dmg = pup.plugins.mac.create_dmg:Step
+mac.dirs = pup.plugins.mac.dirs:Directories
+mac.icon_from_png = pup.plugins.mac.icon_from_png:Step
+mac.launcher = pup.plugins.mac.launcher:Step
+mac.notarize_app_bundle = pup.plugins.mac.notarize:Step
+mac.sign_app_bundle = pup.plugins.mac.sign:Step
+mac.steps = pup.plugins.mac.steps:Steps
+pup.download = pup.plugins.download:Step
+pup.install_cleanup = pup.plugins.install_cleanup:Step
+pup.metadata = pup.plugins.metadata:Step
+pup.pip_install = pup.plugins.pip_install:Step
+pup.python_runtime = pup.plugins.python_runtime:Step
+win.create_msi = pup.plugins.win.create_msi:Step
+win.dirs = pup.plugins.win.dirs:Directories
+win.distribution_layout = pup.plugins.win.dist_layout:Step
+win.icon_from_png = pup.plugins.win.icon_from_png:Step
+win.sign_binaries = pup.plugins.win.signer:SignBinaries
+win.sign_msi = pup.plugins.win.signer:SignMSI
+win.steps = pup.plugins.win.steps:Steps

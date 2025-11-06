@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<?define ProductVersion = "{{ cookiecutter.msi_version }}" ?>
+<?define ProductUpgradeCode = "{{ cookiecutter.guid }}" ?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+   <Product
+            Id="*"
+            UpgradeCode="$(var.ProductUpgradeCode)"
+            Name="{{ cookiecutter.app_name }} {{ cookiecutter.version }}"
+            Version="$(var.ProductVersion)"
+            Manufacturer="{{ cookiecutter.author }}"
+            Language="1033">
+        <Package
+                InstallerVersion="200"
+                Compressed="yes"
+                Comments="Windows Installer Package"
+                InstallScope="perUser"
+        />
+
+        <Property Id="ALLUSERS" Value="2" />
+        <Property Id="MSIINSTALLPERUSER" Value="1" />
+
+        <Media Id="1" Cabinet="product.cab" EmbedCab="yes"/>
+
+        {% if cookiecutter.icon_path %}
+
+        <Icon Id="ProductIcon" SourceFile="{{ cookiecutter.icon_path }}" />
+        <Property Id="ARPPRODUCTICON" Value="ProductIcon" />
+
+        {% endif %}
+
+        <Property Id="ARPURLINFOABOUT" Value="{{ cookiecutter.url }}" />
+        <Property Id="ARPCONTACT" Value="{{ cookiecutter.author_email }}" />
+        <Property Id="ARPNOREPAIR" Value="1" />
+
+        <Upgrade Id="$(var.ProductUpgradeCode)">
+            <UpgradeVersion
+                    Minimum="$(var.ProductVersion)"
+                    OnlyDetect="yes"
+                    Property="NEWERVERSIONDETECTED"
+            />
+            <UpgradeVersion
+                    Minimum="0.0.0"
+                    Maximum="$(var.ProductVersion)"
+                    IncludeMinimum="yes"
+                    IncludeMaximum="no"
+                    Property="OLDERVERSIONBEINGUPGRADED"
+            />
+        </Upgrade>
+
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramFilesFolder">
+                <Directory Id="{{ cookiecutter.launch_module }}_ROOTDIR" Name="{{ cookiecutter.app_name }}" />
+            </Directory>
+
+            <Directory Id="ProgramMenuFolder">
+                <Component
+                        Id="ApplicationShortcuts"
+                        Guid="*">
+                    <Shortcut
+                            Id="ApplicationShortcut1"
+                            Name="{{ cookiecutter.app_name }}"
+                            {% if cookiecutter.icon_path %}
+                            Icon="ProductIcon"
+                            {% endif %}
+                            Target="[{{ cookiecutter.launch_module }}_ROOTDIR]python\pythonw.exe"
+                            WorkingDirectory="{{ cookiecutter.launch_module }}_ROOTDIR"
+                            Arguments="{{ cookiecutter.launch_pyflags }} -m {{ cookiecutter.launch_module }}" />
+                    <RegistryValue
+                            Root="HKCU"
+                            Key="Software\{{ cookiecutter.author }}\{{ cookiecutter.app_name }}"
+                            Name="installed"
+                            Type="integer"
+                            Value="1"
+                            KeyPath="yes" />
+                </Component>
+            </Directory>
+        </Directory>
+
+        <InstallExecuteSequence>
+            <RemoveExistingProducts After="InstallValidate"/>
+        </InstallExecuteSequence>
+
+        <Feature Id="DefaultFeature" Level="1">
+            <ComponentGroupRef Id="{{ cookiecutter.launch_module }}_COMPONENTS" />
+            <ComponentRef Id="ApplicationShortcuts"/>
+        </Feature>
+
+        {% if cookiecutter.rtf_license_path %}
+
+        <UI>
+            <UIRef Id="WixUI_Minimal" />
+            <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication">
+                WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed
+            </Publish>
+        </UI>
+
+        <WixVariable Id="WixUILicenseRtf" Value="{{ cookiecutter.rtf_license_path }}" />
+
+            {% if cookiecutter.icon_path %}
+            <WixVariable Id="WixUIBannerBmp" Value="{{ cookiecutter.ui_banner_path }}" />
+            <WixVariable Id="WixUIDialogBmp" Value="{{ cookiecutter.ui_dialog_path }}" />
+            {% endif %}
+
+        {% endif %}
+
+        <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch {{ cookiecutter.app_name }}" />
+        <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOX" Value="1" />
+        <CustomAction Id="LaunchApplication"
+                      Impersonate="yes"
+                      FileKey="{{ cookiecutter.pythonw_exe_file_id }}"
+                      ExeCommand="{{ cookiecutter.launch_pyflags }} -m {{ cookiecutter.launch_module }}"
+                      Return="asyncNoWait"
+                      />
+
+    </Product>
+</Wix>
