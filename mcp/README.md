@@ -76,3 +76,9 @@ Read the contents of test.txt from my export folder.
 ```
 Show all files currently stored in the export folder.
 ```
+
+### Recording
+
+
+
+![Recording 1](mcp.gif)
