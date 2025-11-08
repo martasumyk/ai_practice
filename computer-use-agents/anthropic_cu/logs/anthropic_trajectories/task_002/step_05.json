@@ -1,0 +1,25 @@
+{
+  "response": [
+    {
+      "citations": null,
+      "text": "Let me use the correct action name for right-clicking:",
+      "type": "text"
+    },
+    {
+      "id": "toolu_01X5ZgcMJUazaH2f4KsFsxkT",
+      "input": {
+        "action": "right_click",
+        "coordinate": [
+          400,
+          300
+        ]
+      },
+      "name": "computer",
+      "type": "tool_use"
+    }
+  ],
+  "tool_output": {
+    "error": "Unknown action: right_click",
+    "screenshot": "./computer-use-agent/anthropic_trajectories/task_005/step_05.png"
+  }
+}

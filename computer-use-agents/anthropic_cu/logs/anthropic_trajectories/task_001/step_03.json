@@ -1,0 +1,22 @@
+{
+  "response": [
+    {
+      "citations": null,
+      "text": "I see Safari is starting to load. Let me wait a moment for it to fully open, then I'll navigate to apple.com.",
+      "type": "text"
+    },
+    {
+      "id": "toolu_01H2webqXpJxzobqm2BePer1",
+      "input": {
+        "action": "wait",
+        "duration": 3
+      },
+      "name": "computer",
+      "type": "tool_use"
+    }
+  ],
+  "tool_output": {
+    "status": "waited 1 seconds",
+    "screenshot": "./computer-use-agent/anthropic_trajectories/task_004/step_03.png"
+  }
+}

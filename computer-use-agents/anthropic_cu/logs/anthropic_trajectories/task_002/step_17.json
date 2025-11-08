@@ -1,0 +1,25 @@
+{
+  "response": [
+    {
+      "citations": null,
+      "text": "There seems to be a persistent issue. Let me try a double-click on the desktop to see if that opens anything:",
+      "type": "text"
+    },
+    {
+      "id": "toolu_01RZo3x94XJQizKP8KaUTgNd",
+      "input": {
+        "action": "double_click",
+        "coordinate": [
+          400,
+          300
+        ]
+      },
+      "name": "computer",
+      "type": "tool_use"
+    }
+  ],
+  "tool_output": {
+    "status": "double-clicked at (562,351)",
+    "screenshot": "./computer-use-agent/anthropic_trajectories/task_005/step_17.png"
+  }
+}

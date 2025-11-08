@@ -1,0 +1,25 @@
+{
+  "response": [
+    {
+      "citations": null,
+      "text": "I can see the desktop. Now I'll look for Safari in the dock or applications. I can see Safari in the dock at the bottom of the screen. Let me click on it to open Safari.",
+      "type": "text"
+    },
+    {
+      "id": "toolu_01J1mqFx8nHJJ9ULCxGEKwxL",
+      "input": {
+        "action": "left_click",
+        "coordinate": [
+          198,
+          740
+        ]
+      },
+      "name": "computer",
+      "type": "tool_use"
+    }
+  ],
+  "tool_output": {
+    "status": "clicked at (278,867)",
+    "screenshot": "./computer-use-agent/anthropic_trajectories/task_004/step_02.png"
+  }
+}

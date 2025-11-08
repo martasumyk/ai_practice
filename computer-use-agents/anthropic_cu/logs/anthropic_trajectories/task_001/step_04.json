@@ -1,0 +1,25 @@
+{
+  "response": [
+    {
+      "citations": null,
+      "text": "Great! Safari has opened and I can see the browser window. Now I'll click on the address bar (which shows \"Search or enter website name\") and type \"apple.com\" to navigate to the Apple website.",
+      "type": "text"
+    },
+    {
+      "id": "toolu_01P9Cg7jfCbpykBV6w7xkhzN",
+      "input": {
+        "action": "left_click",
+        "coordinate": [
+          512,
+          74
+        ]
+      },
+      "name": "computer",
+      "type": "tool_use"
+    }
+  ],
+  "tool_output": {
+    "status": "clicked at (720,86)",
+    "screenshot": "./computer-use-agent/anthropic_trajectories/task_004/step_04.png"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "response": [
+    {
+      "citations": null,
+      "text": "Perfect! Safari is now loading the Apple website. I can see the page is starting to load with the Apple.com content. Let me wait a moment for the page to fully load:",
+      "type": "text"
+    },
+    {
+      "id": "toolu_016GJKz2A1V4c7dHjYMGj9uu",
+      "input": {
+        "action": "wait",
+        "duration": 3
+      },
+      "name": "computer",
+      "type": "tool_use"
+    }
+  ],
+  "tool_output": {
+    "status": "waited 1 seconds",
+    "screenshot": "./computer-use-agent/anthropic_trajectories/task_004/step_12.png"
+  }
+}

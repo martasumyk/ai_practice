@@ -1,0 +1,22 @@
+{
+  "response": [
+    {
+      "citations": null,
+      "text": "Great! I can see \"apple.com\" has been typed in the address bar. Now I'll press Enter to navigate to the Apple website.",
+      "type": "text"
+    },
+    {
+      "id": "toolu_01J7o46zX1kQuvrcMVVsPLSK",
+      "input": {
+        "action": "key",
+        "text": "Return"
+      },
+      "name": "computer",
+      "type": "tool_use"
+    }
+  ],
+  "tool_output": {
+    "error": "Unknown action: key",
+    "screenshot": "./computer-use-agent/anthropic_trajectories/task_004/step_06.png"
+  }
+}

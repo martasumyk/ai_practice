@@ -1,0 +1,21 @@
+{
+  "response": [
+    {
+      "citations": null,
+      "text": "I'll help you open the System Preferences app. First, let me take a screenshot to see the current desktop, then locate and click on the System Preferences icon.",
+      "type": "text"
+    },
+    {
+      "id": "toolu_018vvF9QKrnrfEsPfhsXiUd5",
+      "input": {
+        "action": "screenshot"
+      },
+      "name": "computer",
+      "type": "tool_use"
+    }
+  ],
+  "tool_output": {
+    "status": "manual screenshot taken",
+    "screenshot": "./computer-use-agent/anthropic_trajectories/task_005/step_01.png"
+  }
+}

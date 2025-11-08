@@ -1,0 +1,21 @@
+{
+  "response": [
+    {
+      "citations": null,
+      "text": "I'll help you open Safari and search for apple.com. Let me start by taking a screenshot to see the current desktop, then open Safari and navigate to apple.com.",
+      "type": "text"
+    },
+    {
+      "id": "toolu_012CjzNGichBbN3ciiXnThAp",
+      "input": {
+        "action": "screenshot"
+      },
+      "name": "computer",
+      "type": "tool_use"
+    }
+  ],
+  "tool_output": {
+    "status": "manual screenshot taken",
+    "screenshot": "./computer-use-agent/anthropic_trajectories/task_004/step_01.png"
+  }
+}

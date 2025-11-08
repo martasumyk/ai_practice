@@ -1,0 +1,25 @@
+{
+  "response": [
+    {
+      "citations": null,
+      "text": "I can see there's a \"Go\" button to the right of the address bar. Let me click on it to navigate to apple.com:",
+      "type": "text"
+    },
+    {
+      "id": "toolu_01Wj2Qd78oZjXu7DAWTFVUVr",
+      "input": {
+        "action": "left_click",
+        "coordinate": [
+          760,
+          74
+        ]
+      },
+      "name": "computer",
+      "type": "tool_use"
+    }
+  ],
+  "tool_output": {
+    "status": "clicked at (1068,86)",
+    "screenshot": "./computer-use-agent/anthropic_trajectories/task_004/step_11.png"
+  }
+}

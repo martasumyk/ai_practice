@@ -38,3 +38,10 @@ For example:
 ```
 python computer-use-agents/anthropic_cu/anthropic_computer_use.py “Open Safari and search for apple.com website"
 ```
+
+## Recording
+
+
+Task: Open Safari and search for apple.com website.
+
+![Recording 1](gifs/recording1.gif)

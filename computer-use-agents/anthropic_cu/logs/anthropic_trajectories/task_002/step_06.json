@@ -1,0 +1,25 @@
+{
+  "response": [
+    {
+      "citations": null,
+      "text": "Let me check the available actions. I'll try using the middle mouse button instead:",
+      "type": "text"
+    },
+    {
+      "id": "toolu_01Bp1LNXQwbpijZYSaPdyPAH",
+      "input": {
+        "action": "middle_click",
+        "coordinate": [
+          400,
+          300
+        ]
+      },
+      "name": "computer",
+      "type": "tool_use"
+    }
+  ],
+  "tool_output": {
+    "error": "Unknown action: middle_click",
+    "screenshot": "./computer-use-agent/anthropic_trajectories/task_005/step_06.png"
+  }
+}
