@@ -1,7 +1,16 @@
 # Agents practice
 
-- Function calling and Multi-agent Systems: [Google Colab](https://colab.research.google.com/drive/1KWJ6-T4or8Mb6m3Rw6uQSoGMShBfLBDA?usp=sharing)
+```
+01-Function_Calling/
+    └── 01_Function_Calling.ipynb
 
-- MCP 
+02-Agents/
+    ├── 01-Computer-Use-Agents/
+    ├── 02-Multi-Agent-Systems.ipynb
+    └── 03_Agentic_RAG.ipynb
 
-- Computer Use Agent
+03-Model-Context-Protocol/
+    ├── mcp.gif
+    └── mcp_recording.mov
+
+```
